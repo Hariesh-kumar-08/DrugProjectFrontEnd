@@ -1,0 +1,32 @@
+.grey-bg {  
+  background-color: #F5F7FA;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+
+
+
+
+.card:hover {
+  transform: translateY(-10px) scale(1.010) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+    background: linear-gradient(
+    140deg,
+    #42c3ca 0%,
+    #42c3ca 50%,
+    #42c3cac7 75%
+  ) !important;
+  color: #fff;   
+}
+
+@font-face {
+  font-family: Montesratt;
+  src: url(src\assets\fonts\Montserrat-Italic-VariableFont_wght.ttf) format('truetype');
+}
+
+.Montesratt{
+  font-family: Monteseratt;
+}
+

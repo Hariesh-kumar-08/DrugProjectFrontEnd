@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/typeface-muli/index.css"
             ],
             "scripts": []
           },
@@ -62,6 +63,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "DrugProjectFrontEnd:build:development",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "DrugProjectFrontEnd:build:production"
@@ -76,6 +81,7 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "DrugProjectFrontEnd:build"
+           
           }
         },
         "test": {
@@ -83,6 +89,7 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
+
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
