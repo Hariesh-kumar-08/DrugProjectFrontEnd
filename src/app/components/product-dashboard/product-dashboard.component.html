@@ -1,13 +1,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<header>
+  <nav class="navbar navbar-light navbar-expand-lg" style="background-color: lightgray;">
+    <a href="#" class="navbar-brand h1 fw-bold"> Melbourne Drugs </a>
 
-<nav class="navbar navbar-light bg-primary">
-    <div class="container">
-        <h1>Products List</h1>
-        <div class="d-flex">
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#myNavBar"
+            aria-controls="myNavBar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+   <div class="collapse navbar-collapse" id="myNavBar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)=" clickAddProducts()">Add Products</button>
-        </div>
+
+          </li>
+            
+            <li class="nav-item">
+                <a href="/" routerLink="" class="nav-link"><i class="fa fa-home fa-lg" aria-hidden="true" title="Home"></i></a>
+            </li>
+            <li class="nav-item">
+              
+
+                <a href="/" routerLink="/adminlogin" class="nav-link active"><i class="fa fa-sign-out" aria-hidden="true" title="logout"></i></a>
+            </li>
+           
+        </ul>
     </div>
 </nav>
+</header>
+
 
 <!-- <div style="overflow-x:auto;">
   <div>
@@ -70,6 +98,7 @@
                 <div class="mb-3">
                     <label for="Stock" class="form-label">Stock</label>
                     <input type="number" class="form-control" id="Stock" formControlName="Stock">
+                
                 </div>
             </form>
         </div>
@@ -130,14 +159,14 @@
           <div class="card-content">
             <div class="card-body">
               <div class="media d-flex">
-                <div class="media-body text-left">
+                <div class="media-body text-left" style=" font-size:10px;">
                    <h4>Product Id:{{product.productId}}</h4>  
                    <h4>Name:{{product.productName}}</h4>                     
                    <h4>MfdDate:{{product.mfdDate}}</h4>  
                    <h4>ExpDate:{{product.expDate}}</h4>  
                    <h4>Price:{{product.price|currency:'INR'}}</h4>  
-                   <h4 [ngStyle]="product.stock>20?{'text-color': 'darkgreen'}:{'color': 'red'}">Stock:{{product.stock}}</h4>  
-                 
+                   <h4  [ngStyle]="product.stock>20?{'color': 'green'}:{'color': 'red'}">Stock:{{product.stock}}</h4>  
+                   
                 </div>
                 <div class="align-self-center"  >
                     <i  class="fa-solid fa-capsules"></i>

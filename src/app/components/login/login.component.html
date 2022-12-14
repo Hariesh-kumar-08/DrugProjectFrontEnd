@@ -13,7 +13,7 @@
                             <div class="form-group pt-3">
                                 <div class="input-field" [class.error]="loginForm.controls['UserId'].dirty&&loginForm.hasError('required','UserId')">
                                     <span class="fa fa-user p-2"></span>
-                                    <input type="number"placeholder="User Id"  formControlName="UserId" >
+                                    <input type="number"placeholder="User Id"  formControlName="UserId">
                                 </div>
                             </div>
                             <small *ngIf="loginForm.controls['UserId'].dirty&&loginForm.hasError('required','UserId')" class="text-danger">*User Name is required</small>

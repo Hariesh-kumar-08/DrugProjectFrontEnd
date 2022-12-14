@@ -5,4 +5,5 @@ export class Product{
     expDate:string;
     price:number;
     stock:number;
+    
 }

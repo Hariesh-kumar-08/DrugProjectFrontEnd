@@ -18,6 +18,7 @@ export class ProductDashboardComponent implements OnInit {
   showAdd:boolean=false;
   showUpdate:boolean=false;
   productDetail:Product;
+
   constructor(private formBuilder:FormBuilder,private api:ApiService) { }
 
   ngOnInit(): void {
@@ -44,6 +45,7 @@ export class ProductDashboardComponent implements OnInit {
   }
 
   postProductDetails(){
+    this.productModelObj.productId=0;
     this.productModelObj.productName=this.formValue.value.ProductName;
     this.productModelObj.mfdDate=this.formValue.value.MfdDate;
     this.productModelObj.expDate=this.formValue.value.ExpDate;
@@ -102,10 +104,12 @@ export class ProductDashboardComponent implements OnInit {
     this.api.editProducts(this.productModelObj,this.productModelObj.productId)
     .subscribe((res)=>{
       console.log(res);
-      alert('Product Updated');
+      this.formValue.reset();
       let ref=document.getElementById('cancel');
       ref?.click();
-      this.formValue.reset();
+      alert('Product Updated');
+     
+     
       this.getProducts();
 
 

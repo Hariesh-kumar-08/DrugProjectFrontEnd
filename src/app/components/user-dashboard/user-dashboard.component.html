@@ -1,0 +1,46 @@
+<app-main-nav></app-main-nav>
+<div class="card-top container-fluid">
+    <div class="item">
+        <a><img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+        <h6>All products</h6></a>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        
+        <ng-container *ngFor="let product of productsList,imgProperty let i=index">
+          <div class="col-md-3 p-3">
+            <div class="card" >
+            <div class="card-header bg-primary" style="color:white"> 
+              {{product.productName}}
+            </div>
+            <div class="card-body" *ngIf="product.stock>0;else elseCard">
+              <h5 class="card-title">{{product.price|currency:'INR'}}</h5>
+              <h5 class="card-text" *ngIf="product.stock>0">Mfd Date:{{product.mfdDate}}</h5>
+              <h5 class="card-text" *ngIf="product.stock>0 ">Exp Date:{{product.expDate}}</h5>
+              <h5>Quantity:</h5>
+              <div>
+              <input type="number" min="1" max="{{product.stock}}" value="1">
+              </div>
+              <br>
+              <button class="btn btn-primary" (click)="AddProductToCart(product)" ><i class="fa fa-cart-plus"></i> Add to Cart</button>&nbsp;
+              <button class="btn btn-primary" ><i class="fa fa-money" aria-hidden="true"></i> Buy</button>
+           </div>
+          
+           <ng-template #elseCard>
+            <div class="card-body">
+                 <p>The product is <span style="color:red;">Out of Stock</span> as of now.Please cllick the notification bell to get updates</p>
+               
+                 <div>
+                    <button class="btn btn-info" (click)="subscribeBellNotification()"><i [class]="notifyMe" aria-hidden="true"></i>&nbsp;{{notifyText}}</button>
+                </div>
+
+            </div>
+           </ng-template>
+          
+          </div>
+         </div>
+        </ng-container>
+    </div>
+</div>

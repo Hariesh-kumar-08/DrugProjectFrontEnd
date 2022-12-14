@@ -13,13 +13,25 @@ import { RouteGuards } from './services/RouteGuardsService.service';
 import { AuthService } from './services/auth.service';
 import { LoginService } from './services/login.service';
 import { ApiService } from './services/api.service';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { ViewTemplatesComponent } from './components/view-templates/view-templates.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { CartComponent } from './components/cart/cart.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     ProductDashboardComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    HomePageComponent,
+    ViewTemplatesComponent,
+    UserDashboardComponent,
+    CartComponent,
+    MainNavComponent
+
   ],
   imports: [
     BrowserModule,
