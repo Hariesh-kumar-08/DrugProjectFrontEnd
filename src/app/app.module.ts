@@ -23,7 +23,6 @@ import { UsersService } from './services/users.service';
 import { BuyerFormComponent } from './components/buyer-form/buyer-form.component';
 import { PurchaseSummaryComponent } from './components/purchase-summary/purchase-summary.component';
 import { NgToastModule } from 'ng-angular-popup';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,8 +38,7 @@ import { NgToastModule } from 'ng-angular-popup';
     CartFormComponent,
     BuyerFormComponent,
     PurchaseSummaryComponent,
-  
-
+    
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup/public-api';
+import { NgToastService } from 'ng-angular-popup';
 import { Admin } from 'src/app/models/admin';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -42,11 +42,12 @@ export class AdminLoginComponent implements OnInit {
                if(res!=null)
                {
                 this.auth.login();
+                this.toast.success({detail:"Success",summary:"Login success", sticky:true,position:"tr"})
                 this.router.navigate(['/admindashboard']);
                 this.AdminLoginForm.reset();
                }
                else{
-                     alert('Invalid credentials');
+                     this.toast.error({detail:"Error",summary:"Invalid credentials", sticky:true,position:"tr"})
                      this.AdminLoginForm.reset();
                }
               },
