@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { Product } from '../models/products-dashboard.model';
+import { OrderDetail } from '../models/order-detail';
 @Injectable({
   providedIn: 'root'
 })
@@ -51,6 +52,14 @@ export class ApiService {
     .pipe(map((res:any)=>{
       return res
     }))
+  }
+
+  AddToCart(data){
+    return this.http.put<any>("https://localhost:7289/api/Methods/"+data.productId,data)
+    .pipe(map((res:any)=>{
+      return res
+    }))
+
   }
 
 

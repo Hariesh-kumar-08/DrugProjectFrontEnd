@@ -16,7 +16,7 @@
                                     <input type="number"placeholder="User Id"  formControlName="UserId">
                                 </div>
                             </div>
-                            <small *ngIf="loginForm.controls['UserId'].dirty&&loginForm.hasError('required','UserId')" class="text-danger">*User Name is required</small>
+                            <small *ngIf="loginForm.controls['UserId'].dirty&&loginForm.hasError('required','UserId')" class="text-danger">*User Id is required</small>
                             <div class="form-group pt-3" >
                                 <div class="input-field" [class.error]="loginForm.controls['UserPassword'].dirty&&loginForm.hasError('required','UserPassword')">
                                     <span class="fa fa-lock p-2"></span>

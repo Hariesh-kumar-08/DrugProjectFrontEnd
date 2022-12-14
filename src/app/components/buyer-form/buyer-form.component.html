@@ -1,0 +1,106 @@
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <i class="fa fa-medkit" style="font-size:30px;" aria-hidden="true">&nbsp; </i>
+            <strong  style="font-size:20px;">Melbourne Medicals</strong>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <div>
+              <li class="nav-item">
+                <button class="btn btn-primary ml-auto">
+                    <i style="font-size:30px" class="fa fa-home" routerLink="/user-dashboard"></i>
+                    <div style="font-size: 10px;" class="badge bg-danger"></div>
+                </button>
+              </li>
+            </div>
+
+            </ul>
+          </div>
+        </div>
+    </nav>
+</header>
+
+<br>
+
+
+<div class="container">
+    <div class="title">
+        <h2>Product Order Form</h2>
+    </div>
+  <div class="d-flex">
+    <form action="" method="">
+      <label>
+        <span class="fname">Name<span class="required">*</span></span>
+        <input type="text" name="fname">
+      </label>
+      <label>
+        <span class="lname">Last Name <span class="required">*</span></span>
+        <input type="text" name="lname">
+      </label>
+     
+     <label>
+        <span>Street Address <span class="required">*</span></span>
+        <input type="text" name="houseadd" placeholder="House number and street name" required>
+      </label>
+      <label>
+        <span>&nbsp;</span>
+        <input type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)">
+      </label>
+      <label>
+        <span>Town / City <span class="required">*</span></span>
+        <input type="text" name="city"> 
+      </label>
+      <label>
+        <span>State / County <span class="required">*</span></span>
+        <input type="text" name="city"> 
+      </label>
+      <label>
+        <span>Postcode / ZIP <span class="required">*</span></span>
+        <input type="text" name="city"> 
+      </label>
+      <label>
+        <span>Phone <span class="required">*</span></span>
+        <input type="tel" name="city"> 
+      </label>
+      <label>
+        <span>Email Address <span class="required">*</span></span>
+        <input type="email" name="city"> 
+      </label>
+
+    </form>
+    <div class="Yorder">
+      <table>
+        <tr>
+          <th colspan="2">Your order</th>
+        </tr>
+       
+        <tr>
+          <td>Subtotal:</td>
+          <td>{{TotalAmount|currency:'INR'}}</td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td>Free shipping</td>
+        </tr>
+      </table><br>
+      <div>
+        <input type="radio" name="dbt" value="UPI" checked (change)="radioChangeHandler($event)"> UPI
+      </div>
+     
+      <div>
+        <input type="radio" name="dbt" value="Cash on Delivery" (change)="radioChangeHandler($event)"> Cash on Delivery
+      </div>
+      <div>
+        <input type="radio" name="dbt" value="Debit Card" (change)="radioChangeHandler($event)"> Debit Card <span>
+        <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg" alt="" width="50">
+        </span>
+      </div>
+      <button type="button" (click)="AddBuyer()">Place Order</button>
+    </div><!-- Yorder -->
+   </div>
+  </div>

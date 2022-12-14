@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup/public-api';
 import { Admin } from 'src/app/models/admin';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private api:ApiService,private auth:AuthService,private router:Router) { }
+  constructor(private fb:FormBuilder,private api:ApiService,private auth:AuthService,private router:Router,private toast:NgToastService) { }
   AdminLoginForm:FormGroup;
   id:number;
   AdminObj:Admin={

@@ -1,0 +1,8 @@
+.card:hover{
+    background-color: darkgray;
+}
+
+.buyer{
+    margin-right:260px;
+    padding: 10px;
+}

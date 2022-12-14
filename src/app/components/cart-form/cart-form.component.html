@@ -1,0 +1,24 @@
+<app-main-nav></app-main-nav>
+
+<p style="text-align:center">Cart form</p>
+
+<div class="card" style="text-align:center">
+    <div class="card-body">
+        <p>Product Name:{{product.productName}}</p>
+        <p>Unit price:{{product.price}}</p>
+        <input type="number" [(ngModel)]="quantity" min="1" max="{{product.stock}}" value="1">
+        <br>
+        <br>
+        <button class="btn btn-primary" (click)="AddToCart()">Add to Cart</button>
+    </div>
+</div>
+
+<!-- <div class="container">
+       <form [formGroup]="cartForm">
+        <input type="number" [(ngModel)]="quantity" min="1" max="{{product.stock}}" val="1" formControlName="quantity">
+        <button class="btn btn-primary">Add to Cart</button>
+
+       </form>
+</div> -->
+
+

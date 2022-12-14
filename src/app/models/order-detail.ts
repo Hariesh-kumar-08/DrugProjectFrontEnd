@@ -1,7 +1,9 @@
 export class OrderDetail{
-    orderId:number;
-    productId:number;
-    userId:number;
-    purchaseId:number;
-    quantity:number;
+    public  orderId:number;
+    public productId:number;
+    public userId:number;
+    public purchaseId:number;
+    public quantity:number;
+
+    
 }

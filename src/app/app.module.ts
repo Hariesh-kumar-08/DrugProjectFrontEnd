@@ -18,6 +18,11 @@ import { ViewTemplatesComponent } from './components/view-templates/view-templat
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { CartFormComponent } from './components/cart-form/cart-form.component';
+import { UsersService } from './services/users.service';
+import { BuyerFormComponent } from './components/buyer-form/buyer-form.component';
+import { PurchaseSummaryComponent } from './components/purchase-summary/purchase-summary.component';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
     ViewTemplatesComponent,
     UserDashboardComponent,
     CartComponent,
-    MainNavComponent
+    MainNavComponent,
+    CartFormComponent,
+    BuyerFormComponent,
+    PurchaseSummaryComponent,
+  
 
   ],
   imports: [
@@ -38,10 +47,11 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule
   ],
   
-  providers: [RouteGuards,AuthService,LoginService,ApiService],
+  providers: [RouteGuards,AuthService,LoginService,ApiService,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

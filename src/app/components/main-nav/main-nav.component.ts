@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-nav.component.css']
 })
 export class MainNavComponent implements OnInit {
-
-  constructor() { }
+  cartLength:number;
+  constructor(private userobj:UsersService) { }
 
   ngOnInit(): void {
+    this.cartLength=this.userobj.cartLength;
   }
 
 }

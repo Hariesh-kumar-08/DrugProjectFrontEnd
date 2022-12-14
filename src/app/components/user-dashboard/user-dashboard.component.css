@@ -13,3 +13,10 @@
 .card{
     height: 290px;
 }
+
+.card:hover{
+    background-color:darkgrey;
+    translate:   translateY(-10px) scale(1.010) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+      0 24px 46px var(--box-shadow-color);
+}
